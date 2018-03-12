@@ -1,6 +1,8 @@
-# atlantix-alitum-lib
+# Atlantix EDA  
 
-Atlantix Engineering Altium Libraries - Along with programmatically generated libraries 
+Electronic Design Automation (EDA) for today's modern electrical hardware engineers and PCB designers
+
+Featuring powerful software tools for PCB development, featuring Programmatically Generated Libraries (PGL) brought to you by Atlantix Engineering
 
 The value of programmatically generated libraries is efficiency, reliability, and flexibility. The efficiency arrives by one person being able 
 to generate an entire library whereas this would take weeks or months if done manually. The reliability comes from the program doing a 
