@@ -1,6 +1,6 @@
 #====================================
 #
-#  Title   : Programmatically Generate Libraries 
+#  Title   : Programmatically Generated Libraries 
 #  File    : gen_Resistor.py
 #  Author  : Atlantix Engineering
 #  Descrip : Generate a resistor library for Altium Designer 
