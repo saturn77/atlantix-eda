@@ -1,0 +1,41 @@
+[OutputDatabaseLinkFile]
+Version=1.1
+[DatabaseLinks]
+ConnectionString=Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\james\repos\atlantix\atlantix_toolset\atlantix_altiumLib\Atlantix_R.accdb;Persist Security Info=False
+AddMode=3
+RemoveMode=1
+UpdateMode=2
+ViewMode=1
+LeftQuote=[
+RightQuote=]
+QuoteTableNames=1
+UseTableSchemaName=1
+DefaultColumnType=VARCHAR(255)
+LibraryDatabaseType=Microsoft Access 2007
+LibraryDatabasePath=C:\Users\james\repos\atlantix\atlantix_toolset\atlantix_altiumLib\Atlantix_R.accdb
+DatabasePathRelative=0
+TopPanelCollapsed=0
+LibrarySearchPath=
+OrcadMultiValueDelimiter=,
+SearchSubDirectories=0
+SchemaName=
+LastFocusedTable=Atlantix_R
+[Table1]
+SchemaName=
+TableName=Atlantix_R
+Enabled=True
+UserWhere=1
+UserWhereText=[Part] = '{Part}'
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Part0=129|Description0=293|Value0=83|Case0=76|Tol0=72|Power0=87|Manufacturer0=143|Manufacturer P/N0=178|Supplier 10=116|Supplier Part Number 10=220|Library Path0=138|Library Ref0=120|Footprint Path0=150|Footprint Ref0=139|Company0=166|Comment0=116
+[FieldMap1]
+Options=FieldName=Atlantix_R.Description|TableNameOnly=Atlantix_R|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap2]
+Options=FieldName=Atlantix_R.Library Path|TableNameOnly=Atlantix_R|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap3]
+Options=FieldName=Atlantix_R.Library Ref|TableNameOnly=Atlantix_R|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap4]
+Options=FieldName=Atlantix_R.Footprint Path|TableNameOnly=Atlantix_R|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap5]
+Options=FieldName=Atlantix_R.Footprint Ref|TableNameOnly=Atlantix_R|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
