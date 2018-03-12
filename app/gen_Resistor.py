@@ -1,3 +1,13 @@
+#====================================
+#
+#  Title   : Programmatically Generate Libraries 
+#  File    : gen_Resistor.py
+#  Author  : Atlantix Engineering
+#  Descrip : Generate a resistor library for Altium Designer 
+#  
+#  LICENSE : MIT
+# 
+#====================================
 import re
 import sys
 from time import strftime
