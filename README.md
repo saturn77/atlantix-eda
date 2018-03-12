@@ -18,7 +18,8 @@ components such as small signal diodes, zeners, and transistors.
 
 
 ### About
-Atlantix Engineering 
+
+Atlantix Engineering is based in the Midwest, USA
 
 FPGA Enabled Embedded Systems for Power, Control, and Motion
 
