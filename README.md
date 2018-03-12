@@ -1,4 +1,5 @@
 # atlantix-alitum-lib
+
 Atlantix Engineering Altium Libraries - Along with programmatically generated libraries 
 
 The value of programmatically generated libraries is efficiency, reliability, and flexibility. The efficiency arrives by one person being able 
@@ -16,3 +17,9 @@ Future work will focus on adding a GUI front end to the library generation, and 
 components such as small signal diodes, zeners, and transistors. 
 
 
+### About
+Atlantix Engineering 
+
+FPGA Enabled Embedded Systems for Power, Control, and Motion
+
+Altium Design , Hardware Circuit Design and Simulation, Algorithm Development
