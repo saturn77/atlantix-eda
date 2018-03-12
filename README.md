@@ -17,10 +17,12 @@ Future work will focus on adding a GUI front end to the library generation, and 
 components such as small signal diodes, zeners, and transistors. 
 
 
-### About
+## About
 
-Atlantix Engineering is based in the Midwest, USA
+Atlantix Engineering is based in Columbus, Ohio, USA
 
 FPGA Enabled Embedded Systems for Power, Control, and Motion
 
 Altium Design , Hardware Circuit Design and Simulation, Algorithm Development
+
+Python, Qt, and GUI Development
