@@ -1,10 +1,10 @@
 # Atlantix EDA  
 
-Electronic Design Automation (EDA) for today's modern electrical hardware engineers and PCB designers
+Programmatically Generate Altium Libraries. This repo contains programs to generate SCH and PCB libraries for Altium for reistors, capacitors, and many other components. Right now it contains the resistor generation. This has been tested extensively and used for several years. 
 
-Featuring powerful software tools for PCB development, featuring Programmatically Generated Libraries (PGL) brought to you by Atlantix Engineering
+The value of programmatically generated libraries is efficiency, reliability, and flexibility.
 
-The value of programmatically generated libraries is efficiency, reliability, and flexibility. The efficiency arrives by one person being able 
+The efficiency arrives by one person being able 
 to generate an entire library whereas this would take weeks or months if done manually. The reliability comes from the program doing a 
 repeated process, eliminating human error. Finally, there is the flexibility. If one wants to change the data fields for the library, this
 can easily be done via the program. 
@@ -19,12 +19,4 @@ Future work will focus on adding a GUI front end to the library generation, and 
 components such as small signal diodes, zeners, and transistors. 
 
 
-## About
 
-Atlantix Engineering is based in Columbus, Ohio, USA
-
-FPGA Enabled Embedded Systems for Power, Control, and Motion
-
-Altium Design , Hardware Circuit Design and Simulation, Algorithm Development
-
-Python, Qt, and GUI Development
