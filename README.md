@@ -1,6 +1,8 @@
 # Atlantix EDA  
 
-Programmatically Generate Altium Libraries. This repo contains programs to generate SCH and PCB libraries for Altium for reistors, capacitors, and many other components. Right now it contains the resistor generation. This has been tested extensively and used for several years. 
+Programmatically Generate Altium Libraries. This repo contains programs to generate SCH and PCB libraries for Altium for resistors, capacitors, inductors, and discretes such as diodes and zneers.
+
+Right now it contains the resistor generation. This has been tested extensively and used for several years. 
 
 The value of programmatically generated libraries is efficiency, reliability, and flexibility.
 
