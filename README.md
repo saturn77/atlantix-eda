@@ -1,6 +1,8 @@
 # Altium Libraries, Generated Programmatically
 
-This repo contains programs to generate SCH and PCB libraries for Altium via Python. This allows for a complete control over how the libarary is generated. Extensive libararies can be generated this way. Currently the focus is on resistors, capacitors, and inductors. Additionally, the future roadmap will provide libraries for discretes such as diodes and zeners.
+This repo contains programs to generate SCH and PCB libraries for Altium via Rust. The application was originally written in Python. The decision was made to migrate to either C++ or Rust, and Rust was chosen.
+
+This package allows for a complete control over how a PCB libarary is generated. Extensive libararies can be generated this way. Currently the focus is on resistors, capacitors, and inductors. Additionally, the future roadmap will provide libraries for discretes such as diodes and zeners.
 
 Right now it contains the resistor generation. This has been tested extensively and used for several years. 
 
