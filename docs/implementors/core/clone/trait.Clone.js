@@ -1,0 +1,4 @@
+(function() {var implementors = {};
+implementors["atlantix_eda"] = [{"text":"impl Clone for Resistor","synthetic":false,"types":[]}];
+implementors["fs_extra"] = [{"text":"impl Clone for CopyOptions","synthetic":false,"types":[]},{"text":"impl Clone for DirOptions","synthetic":false,"types":[]},{"text":"impl Clone for TransitState","synthetic":false,"types":[]},{"text":"impl Clone for TransitProcess","synthetic":false,"types":[]},{"text":"impl Clone for DirEntryAttr","synthetic":false,"types":[]},{"text":"impl Clone for TransitProcess","synthetic":false,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

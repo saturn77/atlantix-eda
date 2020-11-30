@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `dir` mod in crate `fs_extra`."><meta name="keywords" content="rust, rustlang, rust-lang, dir"><title>fs_extra::dir - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings"></script><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../fs_extra/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a><p class="location">Module dir</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#functions">Functions</a></li></ul></div><p class="location"><a href="../index.html">fs_extra</a></p><script>window.sidebarCurrent = {name: "dir", ty: "mod", relpath: "../"};</script><script defer src="../sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><span class="help-button">?</span>
+                <a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class="fqn"><span class="out-of-band"><span id="render-detail"><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span><a class="srclink" href="../../src/fs_extra/dir.rs.html#1-1349" title="goto source code">[src]</a></span><span class="in-band">Module <a href="../index.html">fs_extra</a>::<wbr><a class="mod" href="">dir</a></span></h1><div class="docblock"><p>This module include extra methods for works with directories.</p>
+<p>One of the distinguishing features is receipt information
+about process work with directories and recursion operations.</p>
+<h1 id="example" class="section-header"><a href="#example">Example</a></h1>
+<div class='information'><div class='tooltip ignore'>ⓘ<span class='tooltiptext'>This example is not tested</span></div></div><div class="example-wrap"><pre class="rust rust-example-rendered ignore">
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">path</span>::<span class="ident">Path</span>;
+<span class="kw">use</span> <span class="ident">std</span>::{<span class="ident">thread</span>, <span class="ident">time</span>};
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">sync</span>::<span class="ident">mpsc</span>::{<span class="self">self</span>, <span class="ident">TryRecvError</span>};
+
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">fs_extra</span>;
+<span class="kw">use</span> <span class="ident">fs_extra</span>::<span class="ident">dir</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">fs_extra</span>::<span class="ident">error</span>::<span class="kw-2">*</span>;
+
+<span class="kw">fn</span> <span class="ident">example_copy</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
+
+    <span class="kw">let</span> <span class="ident">path_from</span> <span class="op">=</span> <span class="ident">Path</span>::<span class="ident">new</span>(<span class="string">&quot;./temp&quot;</span>);
+    <span class="kw">let</span> <span class="ident">path_to</span> <span class="op">=</span> <span class="ident">path_from</span>.<span class="ident">join</span>(<span class="string">&quot;out&quot;</span>);
+    <span class="kw">let</span> <span class="ident">test_folder</span> <span class="op">=</span> <span class="ident">path_from</span>.<span class="ident">join</span>(<span class="string">&quot;test_folder&quot;</span>);
+    <span class="kw">let</span> <span class="ident">dir</span> <span class="op">=</span> <span class="ident">test_folder</span>.<span class="ident">join</span>(<span class="string">&quot;dir&quot;</span>);
+    <span class="kw">let</span> <span class="ident">sub</span> <span class="op">=</span> <span class="ident">dir</span>.<span class="ident">join</span>(<span class="string">&quot;sub&quot;</span>);
+    <span class="kw">let</span> <span class="ident">file1</span> <span class="op">=</span> <span class="ident">dir</span>.<span class="ident">join</span>(<span class="string">&quot;file1.txt&quot;</span>);
+    <span class="kw">let</span> <span class="ident">file2</span> <span class="op">=</span> <span class="ident">sub</span>.<span class="ident">join</span>(<span class="string">&quot;file2.txt&quot;</span>);
+
+    <span class="ident">create_all</span>(<span class="kw-2">&amp;</span><span class="ident">sub</span>, <span class="bool-val">true</span>)<span class="question-mark">?</span>;
+    <span class="ident">create_all</span>(<span class="kw-2">&amp;</span><span class="ident">path_to</span>, <span class="bool-val">true</span>)<span class="question-mark">?</span>;
+    <span class="ident">fs_extra</span>::<span class="ident">file</span>::<span class="ident">write_all</span>(<span class="kw-2">&amp;</span><span class="ident">file1</span>, <span class="string">&quot;content1&quot;</span>)<span class="question-mark">?</span>;
+    <span class="ident">fs_extra</span>::<span class="ident">file</span>::<span class="ident">write_all</span>(<span class="kw-2">&amp;</span><span class="ident">file2</span>, <span class="string">&quot;content2&quot;</span>)<span class="question-mark">?</span>;
+
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">dir</span>.<span class="ident">exists</span>());
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">sub</span>.<span class="ident">exists</span>());
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">file1</span>.<span class="ident">exists</span>());
+    <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">file2</span>.<span class="ident">exists</span>());
+
+
+    <span class="kw">let</span> <span class="ident">options</span> <span class="op">=</span> <span class="ident">CopyOptions</span> {
+        <span class="ident">buffer_size</span>: <span class="number">1</span>,
+        ..<span class="ident">Default</span>::<span class="ident">default</span>(),
+    };
+    <span class="kw">let</span> (<span class="ident">tx</span>, <span class="ident">rx</span>) <span class="op">=</span> <span class="ident">mpsc</span>::<span class="ident">channel</span>();
+    <span class="ident">thread</span>::<span class="ident">spawn</span>(<span class="kw">move</span> <span class="op">|</span><span class="op">|</span> {
+        <span class="kw">let</span> <span class="ident">handler</span> <span class="op">=</span> <span class="op">|</span><span class="ident">process_info</span>: <span class="ident">TransitProcess</span><span class="op">|</span> {
+            <span class="ident">tx</span>.<span class="ident">send</span>(<span class="ident">process_info</span>).<span class="ident">unwrap</span>();
+            <span class="ident">thread</span>::<span class="ident">sleep</span>(<span class="ident">time</span>::<span class="ident">Duration</span>::<span class="ident">from_millis</span>(<span class="number">500</span>));
+        };
+        <span class="ident">copy_with_progress</span>(<span class="kw-2">&amp;</span><span class="ident">test_folder</span>, <span class="kw-2">&amp;</span><span class="ident">path_to</span>, <span class="kw-2">&amp;</span><span class="ident">options</span>, <span class="ident">handler</span>).<span class="ident">unwrap</span>();
+    });
+
+    <span class="kw">loop</span> {
+        <span class="kw">match</span> <span class="ident">rx</span>.<span class="ident">try_recv</span>() {
+            <span class="prelude-val">Ok</span>(<span class="ident">process_info</span>) <span class="op">=</span><span class="op">&gt;</span> {
+                <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{} of {} bytes&quot;</span>,
+                         <span class="ident">process_info</span>.<span class="ident">copied_bytes</span>,
+                         <span class="ident">process_info</span>.<span class="ident">total_bytes</span>);
+            }
+            <span class="prelude-val">Err</span>(<span class="ident">TryRecvError</span>::<span class="ident">Disconnected</span>) <span class="op">=</span><span class="op">&gt;</span> {
+                <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;finished&quot;</span>);
+                <span class="kw">break</span>;
+            }
+            <span class="prelude-val">Err</span>(<span class="ident">TryRecvError</span>::<span class="ident">Empty</span>) <span class="op">=</span><span class="op">&gt;</span> {}
+        }
+    }
+    <span class="prelude-val">Ok</span>(())
+
+}
+<span class="kw">fn</span> <span class="ident">main</span>() {
+    <span class="ident">example_copy</span>();
+}</pre></div>
+</div><h2 id="structs" class="section-header"><a href="#structs">Structs</a></h2>
+<table><tr class="module-item"><td><a class="struct" href="struct.CopyOptions.html" title="fs_extra::dir::CopyOptions struct">CopyOptions</a></td><td class="docblock-short"><p>Options and flags which can be used to configure how a file will be  copied  or moved.</p>
+</td></tr><tr class="module-item"><td><a class="struct" href="struct.DirContent.html" title="fs_extra::dir::DirContent struct">DirContent</a></td><td class="docblock-short"><p>A structure which imclude information about directory</p>
+</td></tr><tr class="module-item"><td><a class="struct" href="struct.DirOptions.html" title="fs_extra::dir::DirOptions struct">DirOptions</a></td><td class="docblock-short"><p>Options and flags which can be used to configure how read a directory.</p>
+</td></tr><tr class="module-item"><td><a class="struct" href="struct.LsResult.html" title="fs_extra::dir::LsResult struct">LsResult</a></td><td class="docblock-short"><p>Result returned by the <code>ls</code> function.</p>
+</td></tr><tr class="module-item"><td><a class="struct" href="struct.TransitProcess.html" title="fs_extra::dir::TransitProcess struct">TransitProcess</a></td><td class="docblock-short"><p>A structure which include information about the current status of the copy or move directory.</p>
+</td></tr></table><h2 id="enums" class="section-header"><a href="#enums">Enums</a></h2>
+<table><tr class="module-item"><td><a class="enum" href="enum.DirEntryAttr.html" title="fs_extra::dir::DirEntryAttr enum">DirEntryAttr</a></td><td class="docblock-short"><p>Available attributes for get information about directory entry.</p>
+</td></tr><tr class="module-item"><td><a class="enum" href="enum.DirEntryValue.html" title="fs_extra::dir::DirEntryValue enum">DirEntryValue</a></td><td class="docblock-short"><p>Available types for directory entry.</p>
+</td></tr><tr class="module-item"><td><a class="enum" href="enum.TransitProcessResult.html" title="fs_extra::dir::TransitProcessResult enum">TransitProcessResult</a></td><td class="docblock-short"><p>Available returns codes for user decide</p>
+</td></tr><tr class="module-item"><td><a class="enum" href="enum.TransitState.html" title="fs_extra::dir::TransitState enum">TransitState</a></td><td class="docblock-short"></td></tr></table><h2 id="functions" class="section-header"><a href="#functions">Functions</a></h2>
+<table><tr class="module-item"><td><a class="fn" href="fn.copy.html" title="fs_extra::dir::copy fn">copy</a></td><td class="docblock-short"><p>Copies the directory contents from one place to another using recursive method.
+This function will also copy the permission bits of the original files to
+destionation files (not for directories).</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.copy_with_progress.html" title="fs_extra::dir::copy_with_progress fn">copy_with_progress</a></td><td class="docblock-short"><p>Copies the directory contents from one place to another using recursive method,
+with recept information about process. This function will also copy the
+permission bits of the original files to destionation files (not for directories).</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.create.html" title="fs_extra::dir::create fn">create</a></td><td class="docblock-short"><p>Creates a new, empty directory at the provided path.</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.create_all.html" title="fs_extra::dir::create_all fn">create_all</a></td><td class="docblock-short"><p>Recursively create a directory and all of its parent components if they are missing.</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.get_details_entry.html" title="fs_extra::dir::get_details_entry fn">get_details_entry</a></td><td class="docblock-short"><p>Returned information about directory entry with information which you choose in config.</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.get_dir_content.html" title="fs_extra::dir::get_dir_content fn">get_dir_content</a></td><td class="docblock-short"><p>Return DirContent which containt information about directory:</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.get_dir_content2.html" title="fs_extra::dir::get_dir_content2 fn">get_dir_content2</a></td><td class="docblock-short"><p>Return DirContent which containt information about directory:</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.get_size.html" title="fs_extra::dir::get_size fn">get_size</a></td><td class="docblock-short"><p>Returns the size of the file or directory</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.ls.html" title="fs_extra::dir::ls fn">ls</a></td><td class="docblock-short"><p>Returned collection directory entries with information which you choose in config.</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.move_dir.html" title="fs_extra::dir::move_dir fn">move_dir</a></td><td class="docblock-short"><p>Moves the directory contents from one place to another.
+This function will also copy the permission bits of the original files to
+destionation files (not for directories).</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.move_dir_with_progress.html" title="fs_extra::dir::move_dir_with_progress fn">move_dir_with_progress</a></td><td class="docblock-short"><p>Moves the directory contents from one place to another with recept information about process.
+This function will also copy the permission bits of the original files to
+destionation files (not for directories).</p>
+</td></tr><tr class="module-item"><td><a class="fn" href="fn.remove.html" title="fs_extra::dir::remove fn">remove</a></td><td class="docblock-short"><p>Removes directory.</p>
+</td></tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../";window.currentCrate = "fs_extra";</script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>
