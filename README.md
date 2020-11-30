@@ -52,7 +52,7 @@ The use of Atlantix-EDA to generate the resistor library enables engineers devel
 available to them. This library enables quicker design cycles by
 eliminating part creation and more robust design as BOM generation from the schematic will be accurate and true.
 
-![image](./src/table.jpg)
+![image](./docs/table.jpg)
 
 A history and more complete background of the [resistor series.](https://en.wikipedia.org/wiki/E_series_of_preferred_numbers "Wikipedia resistor series background")
 
