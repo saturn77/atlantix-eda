@@ -77,16 +77,16 @@ by Altium or another tool.
 
 ```rust
 fn main() {
- 		let decades = [1,10,100,1000,10000,100000];
-			let mut name_0402 : String = " ".to_string();
+ 	let decades = [1,10,100,1000,10000,100000];
+	let mut name_0402 : String = " ".to_string();
 
-			let mut r0402 = generate::Resistor::new(96, "0402".to_string());
+	let mut r0402 = generate::Resistor::new(96, "0402".to_string());
 
-			for decade in decades.iter() {
-				name_0402 = r0402.generate(*decade);
-			}
+	for decade in decades.iter() {
+		name_0402 = r0402.generate(*decade);
+	}
 
- 		let mut file = OpenOptions::new()
+ 	let mut file = OpenOptions::new()
                        .write(true)
                        .truncate(true)
                        .open("data.txt")
