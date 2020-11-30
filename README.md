@@ -70,3 +70,32 @@ r0603.generate(*decade);
 }
 ```
 
+## Detailed usage example
+The code below shows how to actually instantiate the resistor object and generate
+values across several decade values while writing to a file, which is then imported
+by Altium or another tool.
+
+```rust
+fn main() {
+ 		let decades = [1,10,100,1000,10000,100000];
+			let mut name_0402 : String = " ".to_string();
+
+			let mut r0402 = generate::Resistor::new(96, "0402".to_string());
+
+			for decade in decades.iter() {
+				name_0402 = r0402.generate(*decade);
+			}
+
+ 		let mut file = OpenOptions::new()
+                       .write(true)
+                       .truncate(true)
+                       .open("data.txt")
+                       .expect("cannot open file");
+
+			file.write_all(name_0402.as_bytes()).expect("write failed");
+
+			println!("** Success::0402 resistor generation.");
+ 	}
+```
+
+
