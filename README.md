@@ -25,7 +25,7 @@ with the advantages of:
 
 Licensed under GNU General Public License (GPL).
 
-Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+Copyright, 2006-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
 
 # Integration
 
