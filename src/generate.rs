@@ -29,6 +29,17 @@ use self::num_traits::Pow;
 ///
 /// *Note*: One may want to have manuf_1, manuf_2, manuf_3, etc.
 ///
+/// 
+/// 
+/// 
+
+
+//-----------------------------------------------------------------------------------
+// Licensed under GNU General Public License (GPL).
+// Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+//-----------------------------------------------------------------------------------
+
+
 #[derive(Debug, Clone, PartialEq)]
 pub struct Resistor {
     display: bool,

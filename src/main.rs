@@ -22,6 +22,7 @@
 //! # License
 //!
 //! Licensed under GNU General Public License (GPL).
+//! Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
 //!
 //! # Integration
 //!
@@ -116,6 +117,11 @@
 //!
 //! RES0402_976K, Vishay, 0402, 1/16
 //!
+
+//-----------------------------------------------------------------------------------
+// Licensed under GNU General Public License (GPL).
+// Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+//-----------------------------------------------------------------------------------
 
 #![crate_name = "atlantix_eda"]
 pub mod generate;
