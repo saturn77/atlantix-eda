@@ -25,6 +25,8 @@ with the advantages of:
 
 Licensed under GNU General Public License (GPL).
 
+Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+
 # Integration
 
 Altium for example has the database import described
