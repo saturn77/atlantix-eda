@@ -122,14 +122,14 @@ impl Resistor {
             series_array: alpha,
         }
     }
-    ///  Impl Function : set_manuf_num
+    ///  Impl Function : set_vishay_num
     ///  #  Remarks
     ///
     /// This will assign a Manufacturer or Vendor number to the self.manuf field.
     /// This is true for all decades other than decade 1, which has special exception.
     ///
     /// ```
-    /// pub fn set_manuf_num(&mut self) -> String {
+    /// pub fn set_vishay_num(&mut self) -> String {
     ///		match self.case {
     /// 		0402 => self.manuf = format!("541-%sLCT-ND",self.series_array[index]);
     ///			0603 => self.manuf = format!("541-%sHCT-ND",self.series_array[index]);
@@ -138,7 +138,7 @@ impl Resistor {
     /// }
     ///
     /// ```
-    pub fn set_manuf_num(&mut self, index: usize, decade: u32) {
+    pub fn set_vishay_num(&mut self, index: usize, decade: u32) {
         if decade == 1 {
             match self.case.as_str() {
                 "0402" => self.manuf = format!("541-{}LLCT-ND", self.series_array[index]),
@@ -246,29 +246,29 @@ impl Resistor {
             match decade {
                 1 => {
                     self.value = format!("{:.2}", self.series_array[index]);
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 10 => {
                     self.value = format!("{:2.1}", (decade as f64) * self.series_array[index]);
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 100 => {
                     self.value = format!("{:3.0}", (decade as f64) * self.series_array[index]);
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 1000 => {
                     self.value = format!("{:.2}", self.series_array[index]) + &"K".to_string();
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 10000 => {
                     self.value = format!("{:2.1}", (10 as f64) * self.series_array[index])
                         + &"K".to_string();
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 100000 => {
                     self.value = format!("{:3.0}", (100 as f64) * self.series_array[index])
                         + &"K".to_string();
-                    self.set_manuf_num(index, decade)
+                    self.set_vishay_num(index, decade)
                 }
                 _ => (),
             }
