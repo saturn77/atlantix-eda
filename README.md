@@ -24,6 +24,21 @@ then:
 cargo build 
 cargo run --example gen_vishay_resistor
 ```
+then you will see in the terminal 
+```terminal
+cargo run --example gen_vishay_resistor
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target\debug\examples\gen_vishay_resistor.exe` 
+** Success::0402 resistor generation.
+
+** Success::0603 resistor generation.
+
+** Success::0805 resistor generation.
+
+** Success::1206 resistor generation.
+
+** Success::1210 resistor generation.
+```
 
 The file data.txt will then be generated with the CSV file that can be imported into Altium. 
 
