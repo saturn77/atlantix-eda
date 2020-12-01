@@ -10,5 +10,6 @@ num-traits = "0.2.14"
 fs_extra = "1.2.0"
 
 
-
+[lib]
+name = "generate"
 

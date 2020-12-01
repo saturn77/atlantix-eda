@@ -3,6 +3,9 @@
 //! The `gen_resistor` crate is tested for rustc 1.8 and greater.
 //! The num_traits crate is required, 0.2 and greater.
 
+
+//pub mod generate;
+
 extern crate num_traits;
 
 use self::num_traits::Pow;

@@ -123,8 +123,12 @@
 // Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
 //-----------------------------------------------------------------------------------
 
-#![crate_name = "atlantix_eda"]
-pub mod generate;
+extern crate generate;
+
+
+extern crate num_traits;
+
+
 use std::fs::OpenOptions;
 use std::io::prelude::*;
 
