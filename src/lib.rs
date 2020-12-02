@@ -198,22 +198,22 @@ impl Resistor {
         "RES".to_string()
             + &self.case
             + &"_".to_string()
-            + &self.value + &", ".to_string()
-            + &"\"".to_string() + &"RES " + &self.case + &" ".to_string() +  &self.value + &"Ohm ".to_string() + &self.power + &"W\", "
+            + &self.value + &",".to_string()
+            + &"\"".to_string() + &"RES " + &self.case + &" ".to_string() +  &self.value + &"Ohm ".to_string() + &self.power + &"W\","
             + &self.value
-            + &", ".to_string()
+            + &",".to_string()
             + &self.case
-            + &", ".to_string()
+            + &",".to_string()
             + &self.power
-            + &", ".to_string()
-            + &"Digikey, ".to_string()
+            + &",".to_string()
+            + &"Digikey,".to_string()
             + &self.manuf
-            + &", ".to_string()
-            + &"Atlantix_R.SchLib, ".to_string()
-            + &"Res1, ".to_string()
-            + &"Atlantix_R.PcbLib, ".to_string()
-            + &"RES".to_string() + &self.case + &" , ".to_string()
-            + &"Atlantix EDA, =Description ".to_string()
+            + &",".to_string()
+            + &"Atlantix_R.SchLib,".to_string()
+            + &"Res1,".to_string()
+            + &"Atlantix_R.PcbLib,".to_string()
+            + &"RES".to_string() + &self.case + &",".to_string()
+            + &"Atlantix EDA, =Description".to_string()
             + &"\r\n".to_string()
     }
 

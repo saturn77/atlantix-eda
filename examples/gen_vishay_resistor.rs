@@ -131,13 +131,13 @@ fn main() -> std::io::Result<()> {
         .write(true)
         .create(true)
         .truncate(true)
-        .open("data.txt")
+        .open("./outputs/data.txt")
         .expect("cannot open file");
 
-    file.write_all("Part, Description, Value, Case, Power, Supplier 1, Supplier Part Number 1, Library Path, Library Ref, Footprint Path, Footprint Ref, Company, Comment \r\n".as_bytes()).expect("write failed");
+    file.write_all("Part,Description,Value,Case,Power,Supplier 1,Supplier Part Number 1,Library Path,Library Ref,Footprint Path,Footprint Ref,Company,Comment \r\n".as_bytes()).expect("write failed");
 
     file.write_all(name_0402.as_bytes()).expect("write failed");
-    println!("** Success::0402 resistor generation.\r\n");
+    println!("** Success::0402 resistor E-96 series generation (1 Ohm to 1 MOhm).\r\n");
 
     //--------------------------------------------------------------
 
@@ -147,7 +147,7 @@ fn main() -> std::io::Result<()> {
         //println!("{ }",name_0603)
     }
     file.write_all(name_0603.as_bytes()).expect("write failed");
-    println!("** Success::0603 resistor generation.\r\n");
+    println!("** Success::0603 resistor E-96 series generation (1 Ohm to 1 MOhm).\r\n");
 
     //--------------------------------------------------------------
 
@@ -157,7 +157,7 @@ fn main() -> std::io::Result<()> {
         //println!("{}",name_0805);
     }
     file.write_all(name_0805.as_bytes()).expect("write failed");
-    println!("** Success::0805 resistor generation.\r\n");
+    println!("** Success::0805 resistor E-96 series generation (1 Ohm to 1 MOhm).\r\n");
 
     //--------------------------------------------------------------
 
@@ -167,7 +167,7 @@ fn main() -> std::io::Result<()> {
         //println!("{}",name_0805);
     }
     file.write_all(name_1206.as_bytes()).expect("write failed");
-    println!("** Success::1206 resistor generation.\r\n");
+    println!("** Success::1206 resistor E-96 series generation (1 Ohm to 1 MOhm).\r\n");
 
     //--------------------------------------------------------------
 
@@ -177,7 +177,7 @@ fn main() -> std::io::Result<()> {
         //println!("{}",name_0805);
     }
     file.write_all(name_1210.as_bytes()).expect("write failed");
-    println!("** Success::1210 resistor generation.\r\n");
+    println!("** Success::1210 resistor E-96 series generation (1 Ohm to 1 MOhm).\r\n");
 
     //--------------------------------------------------------------
     Ok(())
