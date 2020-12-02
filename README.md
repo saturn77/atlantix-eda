@@ -1,4 +1,4 @@
-# atlantix-eda
+# Atlantix-EDA
 Programmatically generated PCB libraries facilitating robust electronic product design.
 Electronic Design Automation (EDA) for modern Printed Circuit Board Design
 
