@@ -1,9 +1,5 @@
 # Atlantix-EDA
 Programmatically generated PCB libraries facilitating robust electronic product design.
-Electronic Design Automation (EDA) for modern Printed Circuit Board Design
-
-Enhancing Engineer's Productivity and Versatility --
- Programmatically Generating Libraries and Circuits.
 
 Atlantix-EDA enables electronic engineers to have fully customizable, rich libraries to employ in designs.
 The Atlantix-EDA software tool suite *value position* is based upon programmatically generated libraries for PCB Design
