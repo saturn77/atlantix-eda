@@ -96,38 +96,11 @@
 //! 	}
 //! ```
 //!
-//! Which will result in values in the file "data.txt" as
-//!
-//! RES0402_1.00, Vishay, 0402, 1/16
-//!
-//! RES0402_1.02, Vishay, 0402, 1/16
-//!
-//! RES0402_1.05, Vishay, 0402, 1/16
-//!  
-//!
-//! . . . . . . . . . . . . . . . (omitting values for brevity)
-//!
-//!
-//!
-//! RES0402_909K, Vishay, 0402, 1/16
-//!
-//! RES0402_931K, Vishay, 0402, 1/16
-//!
-//! RES0402_953K, Vishay, 0402, 1/16
-//!
-//! RES0402_976K, Vishay, 0402, 1/16
-//!
 
 //-----------------------------------------------------------------------------------
 // Licensed under GNU General Public License (GPL).
 // Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
 //-----------------------------------------------------------------------------------
-
-extern crate generate;
-
-
-extern crate num_traits;
-
 
 use std::fs::OpenOptions;
 use std::io::prelude::*;

@@ -1,10 +1,5 @@
-//! The generate module. Contains the primary methods for generating Resistor values.
+//! The generate library module. Contains the primary methods for generating Resistor values.
 //!
-//! The `gen_resistor` crate is tested for rustc 1.8 and greater.
-//! The num_traits crate is required, 0.2 and greater.
-
-
-//pub mod generate;
 
 extern crate num_traits;
 
@@ -32,17 +27,6 @@ use self::num_traits::Pow;
 ///
 /// *Note*: One may want to have manuf_1, manuf_2, manuf_3, etc.
 ///
-/// 
-/// 
-/// 
-
-
-//-----------------------------------------------------------------------------------
-// Licensed under GNU General Public License (GPL).
-// Copyright, 206-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
-//-----------------------------------------------------------------------------------
-
-
 #[derive(Debug, Clone, PartialEq)]
 pub struct Resistor {
     display: bool,
