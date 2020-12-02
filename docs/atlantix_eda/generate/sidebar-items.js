@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Resistor","Resistor type data structure"]]});

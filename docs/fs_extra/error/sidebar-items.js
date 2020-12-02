@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["ErrorKind","A list specifying general categories of fs_extra error."]],"struct":[["Error","The error type for fs_extra operations with files and folder."]],"type":[["Result","A specialized Result type for fs_extra operations."]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["main","The main module which instantiates the generate module as an object. The generator can yield values over decade ranges."]],"mod":[["generate","The generate module. Contains the primary methods for generating Resistor values."]]});
