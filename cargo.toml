@@ -1,5 +1,5 @@
 [package]
-name    = "atlantix-eda" # the name of the package
+name    = "atlantix_eda" # the name of the package
 version = "0.1.1"    # the current version, obeying semver
 authors = ["James <fpga@atlantixeng.com>"]
 description = "Programmatically generated libraries for PCB Design."
@@ -11,5 +11,5 @@ fs_extra = "1.2.0"
 
 
 [lib]
-name = "generate"
+name = "component"
 
