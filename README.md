@@ -25,15 +25,15 @@ then you will see in the terminal
 cargo run --example gen_vishay_resistor
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
      Running `target\debug\examples\gen_vishay_resistor.exe` 
-** Success::0402 resistor generation.
+** Success::0402 component::Resistor E-96 series generation (1 Ohm to 1 MOhm).
 
-** Success::0603 resistor generation.
+** Success::0603 component::Resistor E-96 series generation (1 Ohm to 1 MOhm).
 
-** Success::0805 resistor generation.
+** Success::0805 component::Resistor E-96 series generation (1 Ohm to 1 MOhm).
 
-** Success::1206 resistor generation.
+** Success::1206 component::Resistor E-96 series generation (1 Ohm to 1 MOhm).
 
-** Success::1210 resistor generation.
+** Success::1210 component::Resistor E-96 series generation (1 Ohm to 1 MOhm).
 ```
 
 The file data.txt will then be generated with the CSV file that can be imported into Altium. 
