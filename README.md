@@ -91,7 +91,7 @@ let decades = [1,10,100,1000,10000,100000];
 let mut r0603 = component::Resistor::new(96, "0603".to_string());
 
 for decade in decades.iter() {
-	r0603.generate(*decade);
+r0603.generate(*decade);
 }
 ```
 
