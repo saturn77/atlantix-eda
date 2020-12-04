@@ -88,10 +88,10 @@ the decades ranging from 1 ohm to 1 Meg-Ohm
 
 ```rust
 let decades = [1,10,100,1000,10000,100000];
-let mut r0603 = generate::Resistor::new(96, "0603".to_string());
+let mut r0603 = component::Resistor::new(96, "0603".to_string());
 
 for decade in decades.iter() {
-r0603.generate(*decade);
+	r0603.generate(*decade);
 }
 ```
 
@@ -105,7 +105,7 @@ fn main() {
  	let decades = [1,10,100,1000,10000,100000];
 	let mut name_0402 : String = " ".to_string();
 
-	let mut r0402 = generate::Resistor::new(96, "0402".to_string());
+	let mut r0402 = component::Resistor::new(96, "0402".to_string());
 
 	for decade in decades.iter() {
 		name_0402 = r0402.generate(*decade);
