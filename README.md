@@ -123,4 +123,14 @@ fn main() {
  	}
 ```
 
+# Future Developments
+The next steps in this projects are to cover more vendors, such as 
+1. KOA-Speer
+2. Panasonic
+3. Yageo
 
+In this way, the program will be more complete in that the user can generate a library with 
+any one of the vendors, or all of them, or a subset of them. 
+
+A next step will be to expand the library to include current sending resistors, as are often
+commonly used on board level power supplies. 
