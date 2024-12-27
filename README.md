@@ -48,7 +48,7 @@ The file data.txt will then be generated with the CSV file that can be imported 
 
 Licensed under GNU General Public License (GPL).
 
-Copyright, 2006-2025, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+Copyright, 2006-2025, Atlantix-EDA, Atlantix Engineering <atlantix-eda@proton.me>
 
 # Integration
 
