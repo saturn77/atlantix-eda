@@ -48,7 +48,7 @@ The file data.txt will then be generated with the CSV file that can be imported 
 
 Licensed under GNU General Public License (GPL).
 
-Copyright, 2006-2020, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
+Copyright, 2006-2025, Atlantix-EDA, Atlantix Engineering <fpga@atlantixeng.com>
 
 # Integration
 
@@ -59,6 +59,10 @@ here:
 
 Other tools such as KiCad, Fusion360(Eagle), Cadence Allegro, and Mentor PADS have not
 been tested with the current Rust version of the software.
+
+While this repository is focused on Altium compatible libraries, the main priority going
+forward will be for the generation of KiCad compatible libraries. 
+
 PADS was tested with an older version of this software so it should easily be adopted.
 Tools such as the [KiCad]( https://gitlab.com/kicad/libraries/kicad-library-utils) generator functionality could
 be replaced by Atlantix-EDA generate module, with the help of templating to take care of
